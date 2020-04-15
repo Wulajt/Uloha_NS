@@ -1,0 +1,29 @@
+% demo ukazky - prednaska 5
+
+% demo_nn1.m
+% trenovanie jedneho neuronu s lin. aktivacnou funkciou
+% prekrytie naklikanych bodov priamkou, ucenie neuronu, nastavenie vahy w a biasu b, 
+% vystup neuronu y=w*x+b
+
+% demo_nn2p.m
+% klasifikacia bodov dvoch skupin pomocou jednovrstvoveho perceptronu
+
+% demo_nn2mlp.m
+% klasifikacia bodov dvoch skupin pomocou viacvrstvovej perceptronovej siete
+
+% demo_iris.m
+% klasifikacia kvetov IRIS do 3 skupin pomocou viacvrstvovej perceptronovej siete
+% triedenie kvetov na zaklade 4 parametrov do 3 skupin
+
+% demo_nn3fitnet.m
+% aproximacia nelinearnej mat. funkcii s jednou premennou pomocou viacvrstvovej perceptronovej siete
+% vytvorenie neuronoveho modelu 
+
+% demo_engine.m
+% aproximacia zavislosti vystupnych velicin (moment, emisie) od vstupnych (spotreba paliva, otacky) spalovacieho motora
+% pomocou viacvrstvovej perceptronovej siete
+% vytvorenie neuronoveho modelu 
+
+% peaks_2D_RBF.m
+% aproximacia nelinearnej mat. funkcii PEAKS s dvoma premennymi pomocou RBF siete
+% vytvorenie neuronoveho modelu na dopocitanie novych bodov, interpolacia funkcie z meranych bodov 
