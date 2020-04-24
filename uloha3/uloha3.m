@@ -2,11 +2,11 @@ clear
 
 load('datapiscisla_all.mat');
 
-S1 = 10000;
+S1 = 20;
 net = patternnet(S1);
 
 % vsetky data pouzite na trenovanie
-net.divideFcn='dividetrain';
+net.divideFcn='dividerand';
 net.divideParam.trainRatio=0.6;
 net.divideParam.testRatio=0.4;
 net.divideParam.valRatio=0;
@@ -30,4 +30,5 @@ for i = 100:500:4600
     dataX= XDataall(:,i);
     dispznak(dataX,28,28);
     cislo = sim(net,dataX)
+    class = vec2ind(cislo)
 end
