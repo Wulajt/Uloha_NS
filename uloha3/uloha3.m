@@ -2,7 +2,7 @@ clear
 
 load('datapiscisla_all.mat');
 
-S1 = 10;
+S1 = 10000;
 net = patternnet(S1);
 
 % vsetky data pouzite na trenovanie
@@ -18,18 +18,16 @@ net.trainParam.epochs = 1000;        % Maximum number of epochs to train.
 net.trainParam.min_grad = 1e-10;    % ukoncovacia podmienka na min. gradient 
 
 % trenovanie NS
-[net,tr,y,e] = train(net,XDataall,YDataall);
-outnetsim = sim(net,XDataall)
+net = train(net,XDataall,YDataall);
 
-Y = net(XDataall);
+outnetsim = sim(net,XDataall);
 classes_predict = vec2ind(outnetsim);
-classes_true = vec2ind(Y);
+classes_true = vec2ind(YDataall);
+confmat = confusionmat(classes_true,classes_predict)/4940*100
+succesfull_rate = trace(confmat)
 
-[m,order] = confusionmat(classes_true,classes_predict)
-
-
-% for i = 100:500:4600
-%     dataX= XDataall(:,i);
-%     dispznak(dataX,28,28);
-%     cislo = sim(net,dataX)
-% end
+for i = 100:500:4600
+    dataX= XDataall(:,i);
+    dispznak(dataX,28,28);
+    cislo = sim(net,dataX)
+end
